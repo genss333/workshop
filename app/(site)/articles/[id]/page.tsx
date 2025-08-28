@@ -1,4 +1,4 @@
-import ArticleDetailComponent from "@/components/article-detail/article-detail";
+import ArticleDetail from "@/components/article-detail/article-detail";
 import { Article } from "@/models/article";
 
 interface ArticleDetailPageProps {
@@ -13,11 +13,7 @@ const ArticleDetailPage = async ({ params }: ArticleDetailPageProps) => {
   );
   const data: Article = await response.json();
 
-  return (
-    <div>
-      <ArticleDetailComponent {...data} />
-    </div>
-  );
+  return <ArticleDetail {...data} />;
 };
 
 export default ArticleDetailPage;

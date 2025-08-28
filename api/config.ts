@@ -1,9 +1,9 @@
-import { type ConfigInFile } from '@babelcoder/restmock';
+import { type ConfigInFile } from "@babelcoder/restmock";
 
 const config: ConfigInFile = {
   port: 3663,
-  dataDir: './api/data',
-  schemaFile: 'schema.ts',
+  dataDir: "./api/data",
+  schemaFile: "schema.ts",
   mapPaths: [
     {
       path: "/users",
@@ -21,20 +21,20 @@ const config: ConfigInFile = {
   extraRoutes: [],
   middleware: [
     [
-      'auth',
+      "auth",
       {
-        kind: 'jwt-cookies',
-        accessTokenSecretKey: 'secret',
-        refreshTokenSecretKey: 'secret',
-        accessTokenExpiresIn: '5m',
-        refreshTokenExpiresIn: '90d',
-        payloadFields: ['role'],
+        kind: "jwt-cookies",
+        accessTokenSecretKey: "secret",
+        refreshTokenSecretKey: "secret",
+        accessTokenExpiresIn: "5m",
+        refreshTokenExpiresIn: "90d",
+        payloadFields: ["role"],
         enableAuthFor: [],
         filterRecordsForUser: [],
       },
     ],
     [
-      'casl',
+      "casl",
       {
         defineAbilitiesFor({ user, can }) {},
         checkAbilitiesFor: [],
@@ -43,7 +43,7 @@ const config: ConfigInFile = {
   ],
   errorHandlers: [],
   cors: {
-    origin: ['http://localhost:3000'],
+    origin: ["http://localhost:3000"],
     credentials: true,
   },
   hooks: {
