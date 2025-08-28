@@ -103,5 +103,5 @@ GET {{$dotenv apiUrl}}/articles
 ###
 GET {{$dotenv apiUrl}}/articles/1
 ###
-GET {{$dotenv apiUrl}}/comments?articleId=1
+GET {{$dotenv apiUrl}}/comments?articleId=9
 ###
