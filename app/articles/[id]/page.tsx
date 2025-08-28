@@ -1,4 +1,4 @@
-import ArticleDetailComponent from "@/components/article-detail/article-detail";
+import ArticleDetail from "@/components/article-detail/article-detail";
 import { Article } from "@/models/article";
 
 interface ArticleDetailPageProps {
@@ -15,7 +15,7 @@ const ArticleDetailPage = async ({ params }: ArticleDetailPageProps) => {
 
   return (
     <div>
-      <ArticleDetailComponent {...data} />
+      <ArticleDetail {...data} />
     </div>
   );
 };
