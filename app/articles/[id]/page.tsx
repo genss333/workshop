@@ -13,11 +13,7 @@ const ArticleDetailPage = async ({ params }: ArticleDetailPageProps) => {
   );
   const data: Article = await response.json();
 
-  return (
-    <div>
-      <ArticleDetail {...data} />
-    </div>
-  );
+  return <ArticleDetail {...data} />;
 };
 
 export default ArticleDetailPage;
