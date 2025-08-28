@@ -19,6 +19,7 @@ const ArticlesPage = async (params: ArticlesPageProps) => {
     <div>
       <ArticleList {...data}></ArticleList>
       <Pagination {...data.paging}></Pagination>
+      
     </div>
   );
 };

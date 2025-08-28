@@ -32,7 +32,7 @@ const ArticleDetailsPage = async ({
   return (
     <>
       <ArticleDetailsModal {...article} />
-      <ArticleList {...data}></ArticleList>
+      <ArticleList {...data} />
     </>
   );
 };

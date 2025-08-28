@@ -8,8 +8,7 @@ const ArticleDetail = ({ id, title, content }: Article) => {
       <li>{title}</li>
       <li>{content}</li>
 
-      <h2>Comment</h2>
-      <CommentList id={id?.toString()} />
+      
     </div>
   );
 };
