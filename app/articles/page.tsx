@@ -1,4 +1,5 @@
 import ArticleList from "@/components/articles-list/articles-list";
+import Pagination from "@/components/Pagin/Pagination";
 import * as types from "@/models/article";
 interface ArticlesPageProps {
   searchParams: Promise<{
@@ -15,6 +16,11 @@ const ArticlesPage = async (params: ArticlesPageProps) => {
   const data = await (res.json() as Promise<types.ArticleList>);
   console.log(data);
 
-  return <ArticleList {...data}></ArticleList>;
+  return (
+    <div>
+      <ArticleList {...data}></ArticleList>
+      <Pagination {...data.paging}></Pagination>
+    </div>
+  );
 };
 export default ArticlesPage;
