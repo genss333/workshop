@@ -15,6 +15,10 @@ const ArticlesPage = async (params: ArticlesPageProps) => {
   const data = await (res.json() as Promise<types.ArticleList>);
   console.log(data);
 
-  return <ArticleList {...data}></ArticleList>;
+  return (
+    <div className="p-[60px]">
+      <ArticleList {...data}></ArticleList>;
+    </div>
+  );
 };
 export default ArticlesPage;

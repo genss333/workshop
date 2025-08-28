@@ -23,7 +23,11 @@ const ArticleDetailsModal = (article: Article) => {
     <Dialog open={isOpen} onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{article.title}</DialogTitle>
+          <DialogTitle>
+            <div className="text-[24px] text-[#3a3a3a] font-semibold line-clamp-2 leading-none">
+              {article.title}
+            </div>
+          </DialogTitle>
         </DialogHeader>
         <ArticleDetailComponent {...article} />
       </DialogContent>
