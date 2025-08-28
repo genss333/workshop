@@ -9,7 +9,9 @@ interface ArticleDetailsPageProps {
 
 const ArticleDetailsPage = async ({ params }: ArticleDetailsPageProps) => {
   const { id } = await params;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/articles/${id}`);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/articles/${id}`, {
+    cache: "no-store",
+  });
   const article = await (res.json() as Promise<Article>);
 
   return <ArticleDetailsModal {...article} />;

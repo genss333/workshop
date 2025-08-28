@@ -8,13 +8,14 @@ interface ArticleDetailPageProps {
 const ArticleDetailPage = async ({ params }: ArticleDetailPageProps) => {
   const { id } = await params;
   const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/articles/${id}`
+    `${process.env.NEXT_PUBLIC_API_URL}/articles/${id}`,
+    { cache: "no-store" }
   );
   const data: Article = await response.json();
 
   return (
     <div>
-      <ArticleDetailComponent {...data}/>
+      <ArticleDetailComponent {...data} />
     </div>
   );
 };
