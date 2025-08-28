@@ -11,7 +11,7 @@ const ArticlesPage = async (params: ArticlesPageProps) => {
   const page = searchParams.page || 1;
   const url = `${process.env.NEXT_PUBLIC_API_URL}/articles`;
 
-  const res = await fetch(url);
+  const res = await fetch(url, { cache: "no-store" });
   const data = await (res.json() as Promise<types.ArticleList>);
   console.log(data);
 

@@ -26,6 +26,14 @@ const ArticleDetailsModal = (article: Article) => {
           <DialogTitle>{article.title}</DialogTitle>
         </DialogHeader>
         <ArticleDetailComponent {...article} />
+        {/* <DialogFooter>
+          <button
+            onClick={() => router.push(`/articles/${article.id}`)}
+            className="text-blue-600 hover:underline"
+          >
+            View Detail
+          </button>
+        </DialogFooter> */}
       </DialogContent>
     </Dialog>
   );
