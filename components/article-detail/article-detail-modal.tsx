@@ -1,14 +1,15 @@
 "use client";
 
 import {
-    Dialog,
-    DialogContent,
-    DialogHeader,
-    DialogTitle,
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
 } from "@/components/ui/dialog";
 import { Article } from "@/models/article";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
+import ArticleDetailComponent from "./article-detail";
 
 const ArticleDetailsModal = (article: Article) => {
   const router = useRouter();
@@ -19,12 +20,12 @@ const ArticleDetailsModal = (article: Article) => {
   }, [isOpen, router]);
 
   return (
-    <Dialog open={isOpen} onOpenChange={(isOpen) => setIsOpen(isOpen)}>
+    <Dialog open={isOpen} onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>{article.name}</DialogTitle>
+          <DialogTitle>{article.title}</DialogTitle>
         </DialogHeader>
-        {/* <ArticleDetails {...article} /> */}
+        <ArticleDetailComponent {...article} />
       </DialogContent>
     </Dialog>
   );
