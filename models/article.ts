@@ -5,6 +5,15 @@ export interface Comment {
   createdAt: string;
 }
 
+export interface Paging {
+  limit: number;
+  totalPages: number;
+  currentPage: number;
+  prevPage: number | null;
+  nextPage: number | null;
+  totalItems: number;
+}
+
 export interface Article {
   id: number;
   title: string;
@@ -13,4 +22,5 @@ export interface Article {
 
 export interface ArticleList {
   items: Article[];
+  paging: Paging;
 }
