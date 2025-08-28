@@ -16,10 +16,9 @@ const ArticlesPage = async (params: ArticlesPageProps) => {
   const data = await (res.json() as Promise<types.ArticleList>);
 
   return (
-    <div>
+    <div className="p-[60px]">
       <ArticleList {...data}></ArticleList>
       <Pagination {...data.paging}></Pagination>
-      
     </div>
   );
 };
