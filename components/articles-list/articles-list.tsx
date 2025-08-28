@@ -1,11 +1,16 @@
 import * as types from "@/models/article";
-
-const ArticleList = ({ items: article, paging }: types.ArticleList) => {
+import Link from "next/link";
+const ArticleList = ({ items: article }: types.ArticleList) => {
   return (
     <>
-        {article.map((article) => (
-  
-        ))}
+      {article?.map((article) => (
+        <div key={article.id}>
+          หัวข้อ
+          <div>{article.title}</div>
+          บทความ<div>{article.content}</div>
+          <hr></hr>
+        </div>
+      ))}
     </>
   );
 };
