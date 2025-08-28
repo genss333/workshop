@@ -1,5 +1,4 @@
 "use client";
-
 import {
   Dialog,
   DialogContent,
@@ -20,23 +19,22 @@ const ArticleDetailsModal = (article: Article) => {
   }, [isOpen, router]);
 
   return (
-    <Dialog open={isOpen} onOpenChange={(isOpen: boolean) => setIsOpen(isOpen)}>
+    <Dialog open={isOpen} onOpenChange={setIsOpen}>
       <DialogContent>
         <DialogHeader>
           <DialogTitle>{article.title}</DialogTitle>
         </DialogHeader>
         <ArticleDetailComponent {...article} />
-        {/* <DialogFooter>
+        {/* <div className="mt-4">
           <button
             onClick={() => router.push(`/articles/${article.id}`)}
             className="text-blue-600 hover:underline"
           >
-            View Detail
+            View Detail (full page)
           </button>
-        </DialogFooter> */}
+        </div> */}
       </DialogContent>
     </Dialog>
   );
 };
-
 export default ArticleDetailsModal;
