@@ -1,0 +1,107 @@
+### AUTH ###
+###
+POST {{$dotenv apiUrl}}/auth/register
+Content-Type: application/json
+
+{
+  "email": "myname@email.com",
+  "password": "mypassword"
+}
+
+###
+POST {{$dotenv apiUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "myname@email.com",
+  "password": "mypassworD"
+}
+
+
+###
+PATCH {{$dotenv apiUrl}}/auth/refresh-token
+Content-Type: application/json
+
+
+{
+  "refreshToken": "{{$dotenv refreshToken}}"
+}
+
+
+###
+DELETE {{$dotenv apiUrl}}/auth/logout
+Content-Type: application/json
+Authorization: Bearer {{$dotenv accessToken}}
+
+
+###
+GET {{$dotenv apiUrl}}/auth/profile
+Content-Type: application/json
+Authorization: Bearer {{$dotenv accessToken}}
+
+
+
+###
+PUT {{$dotenv apiUrl}}/auth/profile
+Authorization: Bearer {{$dotenv accessToken}}
+Content-Type: application/json
+
+{
+  "name": "myname",
+  "email": "myname@email.com",
+  "password": "mypassworD"
+}
+
+###
+DELETE {{$dotenv apiUrl}}/auth/profile
+Content-Type: application/json
+Authorization: Bearer {{$dotenv accessToken}}
+
+{
+  "email": "myname@gmail.com",
+  "password": "mypassword"
+}
+
+### Users ###
+###
+POST {{$dotenv apiUrl}}/users
+Content-Type: application/json
+
+{
+  "name": "myname",
+  "email": "myname@email.com",
+  "password": "mypassworD"
+}
+
+###
+GET {{$dotenv apiUrl}}/users
+
+###
+PUT {{$dotenv apiUrl}}/users/1
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+  "email": "john.doe@example.com"
+}
+
+
+###
+PATCH {{$dotenv apiUrl}}/users/1
+Content-Type: application/json
+
+{
+  "name": "John Doe",
+}
+
+###
+DELETE {{$dotenv apiUrl}}/users/1
+
+
+###
+GET {{$dotenv apiUrl}}/articles
+###
+GET {{$dotenv apiUrl}}/articles/1
+###
+GET {{$dotenv apiUrl}}/comments?articleId=1
+###
