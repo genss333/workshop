@@ -5,7 +5,10 @@ const ArticleList = ({ items: article, paging }: types.ArticleList) => {
     <>
       <div className="grid grid-cols-4 gap-4">
         {article?.map((article) => (
-          <Link href={`/articles/${article.id}`} key={article.id}>
+          <Link
+            href={`/articles/${article.id}?page=${paging.currentPage}`}
+            key={article.id}
+          >
             <div className="border rounded-xl w-[300px] h-[400px] p-2.5 relative">
               <div className="absolute top-0 left-0 z-40">
                 <div className="rounded-br-lg rounded-tl-lg bg-gradient-to-r from-orange-500 to-red-500  text-white px-3.5">
